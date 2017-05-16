@@ -12,8 +12,8 @@ conversion from time24 to time 12 using operator in time24
 class Time12
 {
 	bool pm;			//true = pm, false = am
-	int hours;			// 1 to 12
-	int minutes;		// 0 to 59
+	int hours = 0;			// 1 to 12
+	int minutes = 0;		// 0 to 59
 public:
 	Time12(): pm(true), hours(0), minutes(0) // no Arg constructor
 	{}
@@ -32,9 +32,9 @@ public:
 };
 class Time24
 {
-	int hours;			// 0 to 23
-	int minutes;		// 0 to 59
-	int seconds;		// 0 to 59
+	int hours = 0;			// 0 to 23
+	int minutes = 0;		// 0 to 59
+	int seconds = 0;		// 0 to 59
 public:
 	Time24() : hours(0), minutes(0), seconds(0) // no argument constructor
 	{}
@@ -81,7 +81,7 @@ Time24::operator Time12() const // conversion operator
 
 int main()
 {
-	int hours, minutes, seconds;
+	int hours = 0, minutes = 0, seconds = 0; // added Initialization of variables to 0!!!
 
 	while (true) // get 24 hours time from User
 	{
@@ -99,7 +99,7 @@ int main()
 		if (seconds > 59)
 			return(1);
 
-		Time24 t24(hours, minutes, seconds);		// make a time24
+	Time24 t24(hours, minutes, seconds);		// make a time24
 		std::cout << "You entered: " ; // display the time24
 		t24.display(); 
 
