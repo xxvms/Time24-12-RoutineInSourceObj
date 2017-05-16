@@ -88,15 +88,15 @@ int main()
 		std::cout << "Enter time in 24hours format: \n";
 		std::cout << "  Hours (0 to 23): ";
 		std::cin >> hours;
-		if (hours > 23) // quit if hours > 23
+		if (hours > 23 || hours < 0) // quit if hours > 23
 			return(1);
 		std::cout << "  Minutes: ";
 		std::cin >> minutes;
-		if (minutes > 59)
+		if (minutes > 59 || minutes < 0)
 			return(1);
 		std::cout << "  Seconds: ";
 		std::cin >> seconds;
-		if (seconds > 59)
+		if (seconds > 59 || seconds < 0)
 			return(1);
 
 	Time24 t24(hours, minutes, seconds);		// make a time24
